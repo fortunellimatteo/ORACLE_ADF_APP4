@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="linkStyle">Direct</property>
+   </OverallProperties>
+   <View
+      id="View2">
+      <property
+         name="activityId">editEmp</property>
+      <property
+         name="x">206.0</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>editEmp&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">275.89648</property>
+      <property
+         name="page">/editEmp.jspx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">taskFlowReturn1</property>
+      <property
+         name="x">610.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>taskFlowReturn1&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  taskFlowReturn1&lt;/p></property>
+      <property
+         name="y">173.04004</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <TaskFlowReturn
+      id="TaskFlowReturn4">
+      <property
+         name="activityId">taskFlowReturn2</property>
+      <property
+         name="x">590.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>taskFlowReturn2&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  taskFlowReturn2&lt;/p></property>
+      <property
+         name="y">373.84473</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">commit</property>
+      <property
+         name="sdm:polyPoints">R46,247.0,272.0459,569.0,172.68945,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View2"
+      to="TaskFlowReturn4">
+      <property
+         name="fromOutcome">rollback</property>
+      <property
+         name="sdm:polyPoints">R54,247.0,279.0459,549.0,373.49414,L50</property>
+   </ControlFlowCase>
+</SDM>

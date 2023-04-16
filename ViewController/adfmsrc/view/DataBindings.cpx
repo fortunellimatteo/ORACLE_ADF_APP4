@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.12.24" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/DemoDynamicRegion.jspx" usageId="view_DemoDynamicRegionPageDef"/>
+    <page path="/region1page.jsff" usageId="view_region1pagePageDef"/>
+    <page path="/region2page.jsff" usageId="view_region2pagePageDef1"/>
+    <page path="/startNavigationPage.jspx" usageId="view_startNavigationPagePageDef"/>
+    <page path="/editEmp.jspx" usageId="view_editEmpPageDef"/>
+    <page path="/restoreSavePoint.jspx" usageId="view_restoreSavePointPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_DemoDynamicRegionPageDef" path="view.pageDefs.DemoDynamicRegionPageDef"/>
+    <page id="view_region1pagePageDef" path="view.pageDefs.region1pagePageDef"/>
+    <page path="view.pageDefs.region2pagePageDef_xml" id="xml"/>
+    <page path="view.pageDefs.region2pagePageDef" id="region2pagePageDef"/>
+    <page path="view.pageDefs.region2pagePageDef" id="region2pagePageDef1"/>
+    <page id="view_region2pagePageDef1" path="view.pageDefs.region2pagePageDef1"/>
+    <page id="view_startNavigationPagePageDef" path="view.pageDefs.startNavigationPagePageDef"/>
+    <page id="view_editEmpPageDef" path="view.pageDefs.editEmpPageDef"/>
+    <page id="view_restoreSavePointPageDef" path="view.pageDefs.restoreSavePointPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="HandleForContextualEvent" path="view.HandleForContextualEvent"/>
+  </dataControlUsages>
+</Application>

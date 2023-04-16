@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="taskFlowCall1">
+    <default-activity>startPageTFMain</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition id="__4">
+      <name>inputParameter1</name>
+      <value>#{pageFlowScope.customerInTF}</value>
+      <required/>
+    </input-parameter-definition>
+    <view id="startPageTFMain">
+      <page>/startPageTFMain.jspx</page>
+    </view>
+    <task-flow-call id="taskFlowCall2">
+      <task-flow-reference>
+        <document>/WEB-INF/taskFlowCall2.xml</document>
+        <id>taskFlowCall2</id>
+      </task-flow-reference>
+      <input-parameter id="__5">
+        <name>inputParameter1</name>
+        <pass-by-value/>
+      </input-parameter>
+    </task-flow-call>
+    <task-flow-call id="taskFlowCall3">
+      <task-flow-reference>
+        <document>/WEB-INF/taskFlowCall3.xml</document>
+        <id>taskFlowCall3</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>startPageTFMain</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>commit_rollback</from-outcome>
+        <to-activity-id>taskFlowCall2</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>restoreSavePoint</from-outcome>
+        <to-activity-id>taskFlowCall3</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:h="http://java.sun.com/jsf/html">
+  <af:outputText value="region 1" id="ot1"/>
+  <af:inputText label="name to pass 2nd region" id="it1" value="#{pageFlowScope.name}"/>
+  <af:button text="submit name" id="b1" actionListener="#{bindings.eventBinding.listener.processAction}"/>
+</jsp:root>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="DemoDynamicRegion">
+    <page>/DemoDynamicRegion.jspx</page>
+  </view>
+  <view id="startNavigationPage">
+    <page>/startNavigationPage.jspx</page>
+  </view>
+  <task-flow-call id="taskFlowCall1">
+    <task-flow-reference>
+      <document>/WEB-INF/taskFlowCall1.xml</document>
+      <id>taskFlowCall1</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <control-flow-rule id="__4">
+    <from-activity-id>startNavigationPage</from-activity-id>
+    <control-flow-case id="__5">
+      <from-outcome>go to TF</from-outcome>
+      <to-activity-id>taskFlowCall1</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name>BeanDynamicRegion</managed-bean-name>
+    <managed-bean-class>bean.BeanDynamicRegion</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
+</adfc-config>
